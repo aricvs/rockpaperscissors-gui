@@ -3,9 +3,23 @@
   text-align: center;
 }
 
-.header {
-  animation-duration: 2s;
-  animation-name: slidein;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.choice-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+}
+
+.choice-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+  height: 15vh;
+  width: 15vw;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
