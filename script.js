@@ -40,13 +40,16 @@ function playRound(playerSelection, computerSelection) {
   const drawResult = `Draw!`;
   const lossResult = `You lose, ${computerSelection} beats ${playerSelection}!`;
   const winResult = `You win, ${playerSelection} beats ${computerSelection}!`;
+  const roundBreakdown = document.querySelector(".round-breakdown");
+  const resultOutput = document.querySelector(".result");
 
-  console.log(
-    `You play ${playerSelection} and the computer plays ${computerSelection}`
-  );
+  roundBreakdown.textContent = `You play ${playerSelection} and the computer plays ${computerSelection}`;
+  roundBreakdown.style.visibility = "visible";
 
   if (playerSelection === computerSelection) {
     console.log(drawResult);
+    resultOutput.textContent = drawResult;
+    resultOutput.style.visibility = "visible";
     return 0;
   } else if (playerSelection === "rock" && computerSelection === "paper") {
     console.log(lossResult);
