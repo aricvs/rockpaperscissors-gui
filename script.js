@@ -27,7 +27,6 @@ function getPlayerChoice() {
   ) {
     playerChoice = prompt("Make your play: rock, paper or scissors?");
     playerChoice = playerChoice.toLowerCase();
-    console.clear();
   }
 
   return playerChoice;
@@ -71,21 +70,19 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  while (roundsPlayed < 5) {
-    switch (playRound(getPlayerChoice(), getComputerChoice())) {
-      case 0:
-        break;
-      case 1:
-        computerScore++;
-        break;
-      case 2:
-        playerScore++;
-        break;
-    }
+  switch (playRound(getPlayerChoice(), getComputerChoice())) {
+    case 0:
+      break;
+    case 1:
+      computerScore++;
+      break;
+    case 2:
+      playerScore++;
+      break;
 
-    console.log(`Score: Player ${playerScore} x Computer ${computerScore}`);
-    console.log(`Round ${roundsPlayed + 1}/5`);
-    roundsPlayed++;
+      console.log(`Score: Player ${playerScore} x Computer ${computerScore}`);
+      console.log(`Round ${roundsPlayed + 1}/5`);
+      roundsPlayed++;
   }
 
   if (playerScore > computerScore) {
