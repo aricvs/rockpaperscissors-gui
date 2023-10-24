@@ -96,13 +96,23 @@ function addScore(result) {
   const roundCounter = document.querySelector(".round-counter");
   roundCounter.textContent = `Rounds played ${roundsPlayed}/5`;
 
-  if (playerScore > computerScore) {
-    console.log("Winner: Player!");
-  } else if (playerScore < computerScore) {
-    console.log("Winner: Computer!");
-  } else {
-    console.log("Winner: No one! It's a draw!");
+  if (roundsPlayed === 5) {
+    gameOver();
   }
+}
+
+function gameOver() {
+  document.querySelector(".choice-buttons").style.display = "none";
+  document.querySelector(".call-to-action").style.display = "none";
+  const finalResult = document.querySelector(".final-result");
+  if (playerScore > computerScore) {
+    finalResult.textContent = "Game Over! Winner: Player!";
+  } else if (playerScore < computerScore) {
+    finalResult.textContent = "Game Over! Winner: Computer!";
+  } else {
+    finalResult.textContent = "Game Over! No one wins! It's a draw!";
+  }
+  finalResult.style.visibility = "visible";
 }
 
 getPlayerChoice();
