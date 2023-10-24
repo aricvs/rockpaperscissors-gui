@@ -82,9 +82,11 @@ function addScore(result) {
       break;
   }
 
-  console.log(`Score: Player ${playerScore} x Computer ${computerScore}`);
-  console.log(`Round ${roundsPlayed + 1}/5`);
+  const scoreCounter = document.querySelector(".score-counter");
+  scoreCounter.textContent = `Player ${playerScore} | Computer ${computerScore}`;
   roundsPlayed++;
+  const roundCounter = document.querySelector(".round-counter");
+  roundCounter.textContent = `Rounds played ${roundsPlayed}/5`;
 
   if (playerScore > computerScore) {
     console.log("Winner: Player!");
