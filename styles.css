@@ -23,3 +23,19 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.computer-choice {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  /* visibility: hidden; */
+}
+
+.result {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.final-result {
+  font-size: 2rem;
+}
