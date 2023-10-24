@@ -3,6 +3,7 @@ let playerScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0;
 
+// generate random number for computer play and assigns string to it
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   let computerChoice;
@@ -22,6 +23,7 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+// get player choice and plays a round once a button is clicked
 function getPlayerChoice() {
   let playerChoice;
   const choiceButton = document.querySelectorAll(".choice-button");
@@ -33,6 +35,7 @@ function getPlayerChoice() {
   }
 }
 
+// plays a round, prints the play and returns the results
 function playRound(playerSelection, computerSelection) {
   const drawResult = `Draw!`;
   const lossResult = `You lose, ${computerSelection} beats ${playerSelection}!`;
@@ -66,6 +69,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+// compare the round results and add score
 function addScore(result) {
   switch (result) {
     case 0:
@@ -91,8 +95,4 @@ function addScore(result) {
   }
 }
 
-function game() {
-  getPlayerChoice();
-}
-
-game();
+getPlayerChoice();
