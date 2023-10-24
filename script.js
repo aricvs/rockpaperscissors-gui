@@ -18,6 +18,9 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
+  rockButton = document.querySelector(".rock-button");
+  paperButton = document.querySelector(".paper-button");
+  scissorsButton = document.querySelector(".scissors-button");
   let playerChoice;
 
   while (

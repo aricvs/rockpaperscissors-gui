@@ -28,14 +28,16 @@ p {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 2rem;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .result {
   margin-bottom: 2rem;
   font-size: 2rem;
+  visibility: hidden;
 }
 
 .final-result {
   font-size: 2rem;
+  visibility: hidden;
 }
