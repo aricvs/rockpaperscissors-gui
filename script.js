@@ -19,19 +19,16 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
   let playerChoice;
-
-  while (
-    playerChoice !== "rock" &&
-    playerChoice !== "paper" &&
-    playerChoice !== "scissors"
-  ) {
-    playerChoice = prompt("Make your play: rock, paper or scissors?");
-    playerChoice = playerChoice.toLowerCase();
+  const choiceButton = document.querySelectorAll(".choice-button");
+  for (const button of choiceButton) {
+    button.addEventListener("click", (e) => {
+      playerChoice = e.target.textContent.toLowerCase();
+      playRound(playerChoice, getComputerChoice());
+    });
   }
-
-  return playerChoice;
 }
 
+// TODO: put this into the buttons
 function playRound(playerSelection, computerSelection) {
   const drawResult = `Draw!`;
   const lossResult = `You lose, ${computerSelection} beats ${playerSelection}!`;
@@ -70,28 +67,31 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  switch (playRound(getPlayerChoice(), getComputerChoice())) {
-    case 0:
-      break;
-    case 1:
-      computerScore++;
-      break;
-    case 2:
-      playerScore++;
-      break;
+  // TODO: implement functionality on buttons and delete this
+  // switch (playRound(getPlayerChoice(), getComputerChoice())) {
+  //   case 0:
+  //     break;
+  //   case 1:
+  //     computerScore++;
+  //     break;
+  //   case 2:
+  //     playerScore++;
+  //     break;
 
-      console.log(`Score: Player ${playerScore} x Computer ${computerScore}`);
-      console.log(`Round ${roundsPlayed + 1}/5`);
-      roundsPlayed++;
-  }
+  //     console.log(`Score: Player ${playerScore} x Computer ${computerScore}`);
+  //     console.log(`Round ${roundsPlayed + 1}/5`);
+  //     roundsPlayed++;
+  // }
 
-  if (playerScore > computerScore) {
-    console.log("Winner: Player!");
-  } else if (playerScore < computerScore) {
-    console.log("Winner: Computer!");
-  } else {
-    console.log("Winner: No one! It's a draw!");
-  }
+  // if (playerScore > computerScore) {
+  //   console.log("Winner: Player!");
+  // } else if (playerScore < computerScore) {
+  //   console.log("Winner: Computer!");
+  // } else {
+  //   console.log("Winner: No one! It's a draw!");
+  // }
+
+  getPlayerChoice();
 }
 
 game();
