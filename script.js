@@ -47,27 +47,32 @@ function playRound(playerSelection, computerSelection) {
   roundBreakdown.style.visibility = "visible";
 
   if (playerSelection === computerSelection) {
-    console.log(drawResult);
     resultOutput.textContent = drawResult;
     resultOutput.style.visibility = "visible";
     return 0;
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    console.log(lossResult);
+    resultOutput.textContent = lossResult;
+    resultOutput.style.visibility = "visible";
     return 1;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    console.log(winResult);
+    resultOutput.textContent = winResult;
+    resultOutput.style.visibility = "visible";
     return 2;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    console.log(lossResult);
+    resultOutput.textContent = lossResult;
+    resultOutput.style.visibility = "visible";
     return 1;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    console.log(winResult);
+    resultOutput.textContent = winResult;
+    resultOutput.style.visibility = "visible";
     return 2;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    console.log(lossResult);
+    resultOutput.textContent = lossResult;
+    resultOutput.style.visibility = "visible";
     return 1;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    console.log(winResult);
+    resultOutput.textContent = winResult;
+    resultOutput.style.visibility = "visible";
     return 2;
   }
 }
