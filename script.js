@@ -1,3 +1,8 @@
+// global score keeping variables
+let playerScore = 0;
+let computerScore = 0;
+let roundsPlayed = 0;
+
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   let computerChoice;
@@ -62,10 +67,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function addScore(result) {
-  let playerScore = 0;
-  let computerScore = 0;
-  let roundsPlayed = 0;
-
   switch (result) {
     case 0:
       break;
